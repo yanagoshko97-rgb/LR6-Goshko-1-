@@ -1,62 +1,19 @@
-# БЛОК ОПРЕДЕЛЕНИЯ ОСНОВНОГО ФАЙЛА ПРОЕКТА
-# entrypoint указывает файл, который является главным файлом программы.
-
-entrypoint = "индивидуальная_часть.py"
-
-
-# БЛОК ВЫБОРА ЯЗЫКА ПРОГРАММИРОВАНИЯ
-# modules определяет используемую версию Python.
-# В проекте применяется Python версии 3.11.
+entrypoint = "лр3.py"
 modules = ["python-3.11"]
 
-
-# БЛОК НАСТРОЙКИ СИСТЕМНОГО ОКРУЖЕНИЯ
 [nix]
-
-# channel задает стабильный канал системных пакетов Nix.
 channel = "stable-25_05"
-packages = [
-  "cairo",
-  "ffmpeg-full",
-  "freetype",
-  "ghostscript",
-  "glibcLocales",
-  "gobject-introspection",
-  "gtk3",
-  "pkg-config",
-  "qhull",
-  "tcl",
-  "tk",
-]
+packages = ["cairo", "ffmpeg-full", "freetype", "ghostscript", "glibcLocales", "gobject-introspection", "gtk3", "pkg-config", "qhull", "tcl", "tk"]
 
-
-# БЛОК НАСТРОЙКИ ТЕСТИРОВАНИЯ
 [unitTest]
-
-# language указывает язык, который используется для запуска тестов.
 language = "python3"
 
-
-# БЛОК НАСТРОЙКИ ИМПОРТА ИЗ GITHUB
 [gitHubImport]
-
-# requiredFiles задает обязательные конфигурационные файлы,
-# которые должны присутствовать при импорте проекта.
 requiredFiles = [".replit", "replit.nix"]
 
-
-# БЛОК НАСТРОЙКИ РАЗВЕРТЫВАНИЯ
 [deployment]
-
-
-.
-# run задает команду запуска приложения при развертывании.
-run = ["python3", "индивидуальная_часть.py"]
-
-# deploymentTarget определяет целевую платформу развертывания.
+run = ["python3", "лр3.py"]
 deploymentTarget = "cloudrun"
 
-
-# БЛОК НАСТРОЙКИ ПОМОЩНИКА REPLIT
 [agent]
 expertMode = true
